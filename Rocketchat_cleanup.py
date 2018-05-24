@@ -34,6 +34,7 @@ def login():
     }
     return auth
 
+token = login()
 
 def getchannels(auth):
     rooms = []
@@ -88,16 +89,16 @@ def getgroups(auth):
 # lets get messages from channels first
 
 
-rooms = getchannels(login())
+rooms = getchannels(token)
 
 
 
-rooms = getchannels(login())
+rooms = getchannels(token)
 for x in rooms:
-    print(channelclean(login(), delete_to, delete_from, x))
+    print(channelclean(token, delete_to, delete_from, x))
 
-privaterooms = getgroups(login())
+privaterooms = getgroups(token)
 for x in privaterooms:
-    print(groupconverter(login(), x, "c"))
-    print(channelclean(login(), delete_to, delete_from, x))
-    print(channelconverter(login(), x, "p"))
+    print(groupconverter(token, x, "c"))
+    print(channelclean(token, delete_to, delete_from, x))
+    print(channelconverter(token, x, "p"))
