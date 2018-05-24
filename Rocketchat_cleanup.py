@@ -63,7 +63,7 @@ def groupconverter(auth, roomid, type):
            "roomId": roomid,
            "type": type
            }
-    r = requests.post(channelchange, headers=login(), data=payload)
+    r = requests.post(channelchange, headers=auth, data=payload)
     return r
 
 
@@ -73,7 +73,7 @@ def channelconverter(auth, roomid, type):
            "roomId": roomid,
            "type": type
           }
-    r = requests.post(channelchange, headers=login(), data=payload)
+    r = requests.post(channelchange, headers=auth, data=payload)
     return r
 
 
